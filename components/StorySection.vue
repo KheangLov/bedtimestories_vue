@@ -12,7 +12,7 @@
         class="p-1"
         :key="story.id"
       >
-        <Card :storyobj="story" />
+        <Card :storyobj="story" :linkpath="'/story/'" />
       </b-col>
     </b-row>
   </div>

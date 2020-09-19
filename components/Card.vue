@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/">
+  <nuxt-link :to="link + story.id" class="nuxt-link-active">
     <b-card
       :title="story.title"
       :sub-title="story.category_id.name"
@@ -77,10 +77,11 @@ a.nuxt-link-active .card .card-body .card-text {
 
 <script>
 export default {
-  props: ['storyobj'],
+  props: ['storyobj', 'linkpath'],
   data() {
     return {
-      story: this.storyobj
+      story: this.storyobj,
+      link: this.linkpath
     };
   }
 }
