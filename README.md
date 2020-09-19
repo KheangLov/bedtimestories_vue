@@ -1,4 +1,4 @@
-# bedtimestories
+# Bedtimestories
 
 ## Build Setup
 
