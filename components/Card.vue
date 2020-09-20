@@ -2,7 +2,7 @@
   <nuxt-link :to="link + story.id" class="nuxt-link-active">
     <b-card
       :title="story.title"
-      :sub-title="story.category_id.name"
+      :sub-title="type ? type : story.category_id.name"
       :img-src="`http://mybedtimestories.epizy.com/assets/upload/thumbnails/${story.thumbnail}`"
       :img-alt="story.thumbnail"
       img-top
@@ -77,11 +77,12 @@ a.nuxt-link-active .card .card-body .card-text {
 
 <script>
 export default {
-  props: ['storyobj', 'linkpath'],
+  props: ['storyobj', 'linkpath', 'typetext'],
   data() {
     return {
       story: this.storyobj,
-      link: this.linkpath
+      link: this.linkpath,
+      type: this.typetext
     };
   }
 }

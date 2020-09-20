@@ -6,6 +6,7 @@
       v-for="data in cateData"
       :storiesobj="data.stories"
       :titletext="data.name"
+      :typetext="data.name"
       :key="data.id"
     />
   </b-container>

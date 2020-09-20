@@ -27,10 +27,7 @@
           </b-card>
         </b-col>
         <b-col md="3" class="pl-md-0">
-          <b-card
-            class="mb-3 mt-3 border-0 shadow-sm rounded"
-          >
-          </b-card>
+          <Sidebar :obj="suggestions" />
         </b-col>
       </b-row>
     </b-container>
@@ -38,18 +35,18 @@
 </template>
 
 <style>
-  .detail-wrapper .story-title {
-    font-size: 38px;
-    font-weight: bold;
-    color: #495057;
-  }
+.detail-wrapper .story-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: #495057;
+}
 
-  .detail-wrapper .story-text {
-    font-size: 20px;
-    color: #495057;
-    opacity: 0.8;
-    margin-bottom: 25px;
-  }
+.detail-wrapper .story-text {
+  font-size: 20px;
+  color: #495057;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
 </style>
 
 <script>
@@ -57,9 +54,12 @@ import axios from 'axios';
 import moment from 'moment';
 export default {
   async asyncData({ route: { params: { id } } }) {
+    console.log(id);
     const story = await axios.get(`http://localhost:1337/api/v1/story/${id}`)
       .then(val => val.data.data[0]);
-    return { story };
+    const suggestions = await axios.get(`http://localhost:1337/api/v1/story/${id}/suggestion`)
+      .then(val => val.data.data);
+    return { story, suggestions };
   },
   computed: {
     createdDate: function() {

@@ -12,7 +12,7 @@
         class="p-1"
         :key="story.id"
       >
-        <Card :storyobj="story" :linkpath="'/story/'" />
+        <Card :storyobj="story" :linkpath="'/story/'" :typetext="type" />
       </b-col>
     </b-row>
   </div>
@@ -20,11 +20,12 @@
 
 <script>
 export default {
-  props: ['storiesobj', 'titletext'],
+  props: ['storiesobj', 'titletext', 'typetext'],
   data() {
     return {
       stories: this.storiesobj,
       title: this.titletext,
+      type: this.typetext
     }
   }
 }
