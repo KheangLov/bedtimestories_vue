@@ -54,7 +54,6 @@ import axios from 'axios';
 import moment from 'moment';
 export default {
   async asyncData({ route: { params: { id } } }) {
-    console.log(id);
     const story = await axios.get(`http://localhost:1337/api/v1/story/${id}`)
       .then(val => val.data.data[0]);
     const suggestions = await axios.get(`http://localhost:1337/api/v1/story/${id}/suggestion`)
