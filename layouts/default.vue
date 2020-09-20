@@ -78,7 +78,7 @@
             </b-nav>
           </b-col>
           <b-col cols="2">
-            <h4 class="menu-title">Company</h4>
+            <h4 class="menu-title">Social Links</h4>
             <b-nav vertical class="nav-footer">
               <b-nav-item>Facebook</b-nav-item>
               <b-nav-item>Twitter</b-nav-item>
