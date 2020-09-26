@@ -12,6 +12,8 @@ $footer-text: #868e96;
 //so that they inherit the custom SCSS variables
 @import 'bootstrap/scss/bootstrap.scss';
 @import 'bootstrap-vue/src/index.scss';
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
 
 //all other custom scss files or css should be added here
 body {
